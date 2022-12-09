@@ -1,0 +1,953 @@
+{
+	"info": {
+		"_postman_id": "005623e8-d2e7-495d-960e-22140d335722",
+		"name": "biz-connect-payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18213791"
+	},
+	"item": [
+		{
+			"name": "Order V2",
+			"item": [
+				{
+					"name": "create full order v2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "create_order_device",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "ceres-robot-pg",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..hILly-EihYqirI2G.ugT7-pGcKw6OQcz_YVvx1jMKZexdmiZHhI3fQiFZvhowXW6Qrj_wbuoqZojEoWH4M0vT1Okhd1IXf4gquYlM-ncxC0dBMus3Pr1vMF3AhH2mRY7V1ikVuApcb8hJWJTqvDAQmmIIPlviwsi9kdV1CmOFAXiuxdwSUQmRhZ6s8S7DSs0RB2GJbrf6_Q5FSdrBdNfvVtAAtEvZu6EqcqgBeemfqMRc4wdr_btRytv6cbU_qcTHctMQFvWn4HMZOjoJMvCeSOZXp6DYnXQvsWbBOy4oUo_EOGvOGREYCEfemwl2M6gBuS-JU7vTYCf9I0sPWAGd38mHwYeJWvC7KWdLOD95xeJxmrnQGOOCv8x-ADJykWPP5gDA-UUrfjJO9_KGMZHn.gXVnd2gAoIUxpiUCkFzT0Q",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "447187017267885317620014703306",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"tmn_id\":\"tmn.10001819671\",\n   \"order\":{\n      \"product_code\":\"51051000100000000028\",\n      \"items\":[\n         {\n            \"merchant_id\":\"010000000028749571058\",\n            \"amount\":2000,\n            \"product_id\":\"external_product_id\",\n            \"product_ref1\":\"0498119623\",\n            \"product_ref2\":\"10003718\",\n            \"shop_id\":\"300000000000000537342\",\n            \"terminal_id\":\"5842000520163\",\n            \"metadata\":{\n               \"billcode\":\"TI\",\n               \"Data_ref1\":\"ref1 test\",\n               \"Data_ref2\":\"ref2 test\"\n            }\n         }\n      ],\n      \"metadata\":{\n         \"channel\":\"ANDROID\",\n         \"partner_name\":\"V1\",\n         \"sof\":\"EW\",\n         \"biz_connect_payment_method\":\"not recive\",\n         \"biz_connect_merchant_name\":\"biz_connect_merchant_name\",\n         \"biz_connect_shop_name\":\"biz_connect_shop_name\"\n      }\n   }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/v2/orders",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"v2",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prepare installment order v2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "robot-device",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "ceres-robot-pg",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..2ImAZ1Ay12nU3PfD.6mAVmu0kzf2lY40nPnTvUJwH89_QlVEyygrExOEYi82V1ELsz2x80eATZyW5tezytk-lGU-qqaYo_cz-fJ6MSVZiNgx3IiSVbhlPwzI7rC3sj3PeUL-74ThZ99HXlp9LyvK2ChVEaCgLHDhhz6WQw-Tbh4asJw2q8gyjM7_m_H_jiOPVDl0ojlmAop75un4ma9OL-mACrRJ1Jo5wDnpx1Vg7C8uMGtpqWkka5RBCsfB3MvLIf_TQTlKibaKTUCUVR6fUod4FlZsfWZShhvE4va9bm0Q7ahNP-7tMDKX77xp60VfIAfvIuDuMGibepe4-imJTXvl5hUvROYhYgS96S6jpSRWMNTYZpaeyeFeSNxsTOKdEuypokXgG3iBX5Jo-9Ibh.mOIh3KrNabG9qUH7WCNoOQ",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "request-get-profile-return-employee-id-is-empty",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"staff_uid\": \"test\",\n  \"staff_first_name\": \"test1\",\n  \"staff_last_name\": \"test2\",\n  \"amount\": 210000, \n  \"biz_connect_payment_method\": \"pay_next\",\n  \"merchant_id\": \"merchant_534503420\",\n  \"merchant_name\": \"Sherlock\",\n  \"shop_id\": \"shop_3203480203\",\n  \"shop_name\": \"Holmes\",\n  \"installment_promocode\": \"PRO0001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/v2/orders/installment",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"v2",
+								"orders",
+								"installment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create online installment order v2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "robot-device"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tmn_id\": \"tmn.10001819671\",\n    \"order\": {\n        \"product_code\": \"51051000100000000028\",\n        \"items\": [\n            {\n                \"merchant_id\": \"merchant_534503420\",\n                \"amount\": 10,\n                \"product_id\": \"external_product_id\",\n                \"product_ref1\": \"0498119623\",\n                \"product_ref2\": \"10003718\",\n                \"shop_id\": \"300000000000000537342\",\n                \"terminal_id\": \"5842000520163\",\n                \"metadata\": {\n                    \"billcode\": \"TI\",\n                    \"Data_ref1\": \"ref1 test\",\n                    \"Data_ref2\": \"ref2 test\"\n                }\n            }\n        ],\n        \"metadata\": {\n            \"channel\": \"ANDROID\",\n            \"partner_name\": \"V1\",\n            \"sof\": \"EW\",\n            \"biz_connect_payment_method\": \"pay_next\",\n            \"biz_connect_staff_uid\": \"ceres-robot-partner-gateway\",\n            \"biz_connect_staff_name\": \"ceres-robot-partner-gateway@gmail.com\",\n            \"biz_connect_merchant_name\": \"Sherlock\",\n            \"biz_connect_shop_name\": \"Holmes\",\n            \"biz_connect_installment_tenor\": \"tenor\",\n            \"biz_connect_installment_interest\": \"interest\",\n            \"biz_connect_installment_amount\": \"2000\"\n        }\n    },\n    \"order_display\": {\n        \"order_info\": [\n            {\n                \"language\": \"TH\",\n                \"remark\":  \"เทส\"\n            },\n            {\n                \"language\": \"EN\",\n                \"remark\": \"Test\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/b2b/api/orders/installment/2022080914111636854623",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"b2b",
+								"api",
+								"orders",
+								"installment",
+								"2022080914111636854623"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refund v2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "robot-device-id-refund"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "ceres-robot-pg"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..idiojuypJpXyZvpC.jeUUloFVxBib96qcZCWqWzwUgvd5q61u49AHpPTgYn8fAJjx6FhDlpk-qwLLGRmntJF98HvBHVHQC06FwXHWDIJtQAXm1GERcKN_xVE7Lusv-6KMLhhwIs5xmb1pbNOagvheRGekQlM9vLNECt0MKMzvY3ln_2cynDbRccB82DcolwSMxp-LFMs0OnLseWIWjYky6qvBhNgQM2ApfeeiNpD09qgfF8cqrovkoZBG-umhJna9S96fiVNK4pMpiwA72obG-xoVfrBeerhltAYZjj3-7nkfO46jjFXLgYNO06aucWA2Q7ab7R4bPJcgeenv7r0OB57HavgmCalnI8n9QsO4XQ0fwx05WmJcYmaVT668areLQoYuU5seewuh0fCBQ6nR.OrIBKxF9bGo-eiHARZ1RQA\",\"refresh_token\":\"v1.Ma7wxt9RTePmwj4xNAYr1JRMma89sC-D3k4RujITk8giSZjjI4LkYyq3EOnvSnUKDos0A_tMhUDKNgv76aV8QL8\",\"id_token\":\"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ikd5dW5zdW5JMnJMcktxMmNMdkpXeCJ9.eyJnaXZlbl9uYW1lIjoiY2VyZXMtcm9ib3QtZ2l2ZW4tbmFtZSIsImZhbWlseV9uYW1lIjoiY2VyZXMtcm9ib3QtZmFtaWx5LW5hbWUiLCJuaWNrbmFtZSI6ImNlcmVzLXJvYm90LXBhcnRuZXItZ2F0ZXdheSIsIm5hbWUiOiJjZXJlcy1yb2JvdC1wYXJ0bmVyLWdhdGV3YXlAZ21haWwuY29tIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyLzg4ZDA0ZmY3ZjRkODk3YWU5MGI5ZmVkYzY5YjczOTE5P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGY2UucG5nIiwidXBkYXRlZF9hdCI6IjIwMjItMDgtMTFUMDc6NDE6MDguMTg2WiIsImVtYWlsIjoiY2VyZXMtcm9ib3QtcGFydG5lci1nYXRld2F5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL3RydWVtb25leS1kZXYudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZTgyMjVlNTcxNjk5MDA2YTU2OWJhZiIsImF1ZCI6IlNRTHlRTm43THVkRTRDQlFCOTVqVG4zdjR6dHVKZFB5IiwiaWF0IjoxNjYwMjAzNjcyLCJleHAiOjE2NjAyMzk2NzIsIm9yZ19pZCI6Im9yZ19ZY3lBOEJVYm9kNmVpMnRmIn0.wfr8wtwo1ASvvS24T8LZNf7wfJqabjkWqbBLviVUxb2F3KmeqHyGpIt80zezuD7K86ax4GhXQoYoZGyLNQ3aUu7hRYuSj7-JVLZG4qXV776anPsoOAG1cJ98STMZ8B87OfuGny_N5B56vf0YRokug4uA19NSCDdkiHfWTnXBfpK5OwQ-y-oXYWaT-spVtjnh_KCyZNvdAzs4CSNUdThKZkAyFPyuJWW-5VWq-wF2P1fjqxhmHTUCEOtWMI_VkqoxyAIwICoV4zYYBj_CjbK62hylyZVshFw45pL_k_k8U5BNbtiDcppygh08TUA031lvzYB1U1tGbwcCsP_6nayhrQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 2000\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/v2/orders/220811144411193CHKWZ/refund",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"v2",
+								"orders",
+								"220811144411193CHKWZ",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order v2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "device-get-payment-order",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "ceres-robot-pg",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..-eygD2D3ZlELse5q.GXU8TFJsyAN1_D3Vq0lDOmebXu8uFCb1XuzAk1nPZ7VaPTCTLXjJzYmWunGD6gy-8pQdN47QZ5xH7AvP3jaO0ZSjle3TUbjxIje8eRndwpQzuwPal_ibRhGdq5dHwQSwUsQAW9B7qEC5gIQBMKhijAf4qe0JFMLUGuV8TF2vxZFs5K0ePLKap3yBP-TWRjD9SxtH7ZuL0yQr-3yBHDa4-wmd3g1DyExze3SrqVAcPS9BmulFILXE-hpcx7rxO7Y5BV568SgqDNEIzINpLNBsOjSTP1q2W4xoVPrdLdFOfmJcno22dxKEjzUfzHuVoEqrm4QgiEHbMZFHV28nphZ2b-0gPlXC0ADWGznzqV5AdOP-3idZIm5BHlhUkexC7svz9Vk3.qi3HIeLoimiWXFb8qHnoLw",
+								"type": "text"
+							},
+							{
+								"key": "X-Correlation-Id",
+								"value": "484659520349720867031687089514",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/v2/orders/testprepareinstallment001",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"v2",
+								"orders",
+								"testprepareinstallment001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order history v2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "45e2c169-5b44-4b02-8ed9-6648715be480",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "AAA383289",
+								"type": "text"
+							},
+							{
+								"key": "X-Correlation-Id",
+								"value": "484659520349720867031687089514",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://biz-connect-payment-qa.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/v2/orders/history?ref=2022091914174371318660",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-qa",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"v2",
+								"orders",
+								"history"
+							],
+							"query": [
+								{
+									"key": "ref",
+									"value": "2022091914174371318660"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get payment order v2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "org-get-payment-order",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "device-get-payment-order",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..4knIJfXBzKASuv7J.RalcefqV4UgspKxThi0kXO36bUyRa3Ao_NYkhjFVegPX8BOR4xZ9CUtdYAZibhVoT2rA3Xa_DhF36AnkSzIoHOVYe3v1t7w_k5h2Rp2yK4y_p5_7lKE8XLwuye4qzwTvmZqSEWA6mHi-VGSrgbEhgvwlDGf_SBJz8JQEgP0xePGtaXo719tmt-7vy9Y_v31zAdPJn5PMsVfOcF7OAtO4jnH5nRIFN6-0K6oJkaazM1YKH2NZ0LYOcGDBKKDpEiyZRrgWD_zip2qV6tHC762pZiQB-fowNY_-ei-lXW5UiO15p5O9Mo_FtBdSJJ5xSJMoRbWGJ6VB6U0YyTPY1xHj35HjF6yQqB9V_lEJHSNF7WxzTOGGsxLGs3gtov694MwE68-E.f8O95yjXVQ1nzNuqmF-HYA",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "638211639390471829047366575239",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/v2/orders/payment/2022082511514245907679",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"v2",
+								"orders",
+								"payment",
+								"2022082511514245907679"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "b2b get payment order v2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "org-get-payment-order",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "device-get-payment-order",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..4knIJfXBzKASuv7J.RalcefqV4UgspKxThi0kXO36bUyRa3Ao_NYkhjFVegPX8BOR4xZ9CUtdYAZibhVoT2rA3Xa_DhF36AnkSzIoHOVYe3v1t7w_k5h2Rp2yK4y_p5_7lKE8XLwuye4qzwTvmZqSEWA6mHi-VGSrgbEhgvwlDGf_SBJz8JQEgP0xePGtaXo719tmt-7vy9Y_v31zAdPJn5PMsVfOcF7OAtO4jnH5nRIFN6-0K6oJkaazM1YKH2NZ0LYOcGDBKKDpEiyZRrgWD_zip2qV6tHC762pZiQB-fowNY_-ei-lXW5UiO15p5O9Mo_FtBdSJJ5xSJMoRbWGJ6VB6U0YyTPY1xHj35HjF6yQqB9V_lEJHSNF7WxzTOGGsxLGs3gtov694MwE68-E.f8O95yjXVQ1nzNuqmF-HYA",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "638211639390471829047366575239",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/b2b/api/v2/orders/payment/2022082615473295412584",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"b2b",
+								"api",
+								"v2",
+								"orders",
+								"payment",
+								"2022082615473295412584"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order V1",
+			"item": [
+				{
+					"name": "prepare installment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "device_007"
+							},
+							{
+								"key": "Biz-Connect-Organization-id",
+								"value": "HELLO"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer access-token-success"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"staff_uid\": \"staff_007\",\n  \"staff_first_name\": \"James\",\n  \"staff_last_name\": \"Bond\",\n  \"amount\": 210000, \n  \"biz_connect_payment_method\": \"pay_next\",\n  \"merchant_id\": \"merchant_534503420\",\n  \"merchant_name\": \"Sherlock\",\n  \"shop_id\": \"shop_3203480203\",\n  \"shop_name\": \"Holmes\"\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/orders/installment",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"orders",
+								"installment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create installment order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "HELLO_WORLD_IDP",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "create_order_installment_device-01"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "581187715939726015429657344839",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"tmn_id\":\"tmn.10001819671\",\n   \"order\":{\n      \"product_code\":\"51051000100000000028\",\n      \"items\":[\n         {\n            \"merchant_id\":\"010000000028749571058\",\n            \"amount\":2000,\n            \"product_id\":\"external_product_id\",\n            \"product_ref1\":\"0498119623\",\n            \"product_ref2\":\"10003718\",\n            \"shop_id\":\"300000000000000537342\",\n            \"terminal_id\":\"5842000520163\",\n            \"metadata\":{\n               \"billcode\":\"TI\",\n               \"Data_ref1\":\"ref1 test\",\n               \"Data_ref2\":\"ref2 test\"\n            }\n         }\n      ],\n      \"metadata\":{\n         \"channel\":\"ANDROID\",\n         \"partner_name\":\"V1\",\n         \"sof\":\"EW\",\n         \"biz_connect_payment_method\":\"pay_next\",\n         \"biz_connect_staff_uid\":\"staff001\",\n         \"biz_connect_staff_first_name\":\"biz_connect_staff_first_name\",\n         \"biz_connect_staff_last_name\":\"biz_connect_staff_last_name\",\n         \"biz_connect_merchant_name\":\"biz_connect_merchant_name\",\n         \"biz_connect_shop_name\":\"biz_connect_shop_name\",\n         \"biz_connect_installment_tenor\":\"tenor\",\n         \"biz_connect_installment_interest\":\"interest\",\n         \"biz_connect_installment_amount\":\"2000\"\n      }\n   },\n   \"order_display\":{\n      \"order_info\":[\n         {\n            \"language\":\"TH\",\n            \"remark\":\"\\\\u0e40\\\\u0e17\\\\u0e2a\"\n         },\n         {\n            \"language\":\"EN\",\n            \"remark\":\"Test\"\n         }\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/b2b/api/orders/installment/2022091515565861798553",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"b2b",
+								"api",
+								"orders",
+								"installment",
+								"2022091515565861798553"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prepare online installment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Merchant-Id",
+								"value": "010000000028749571058"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer access-token-success",
+								"disabled": true
+							},
+							{
+								"key": "X-Correlation-Id",
+								"value": "754355006795463446856241790455",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": 20000,\n  \"biz_connect_payment_method\": \"pay_next\",\n  \"merchant_id\": \"010000000028749571058\",\n  \"shop_id\": \"300000000000000537342\",\n  \"installment_promocode\": \"PRO0001\",\n  \"isv_payment_ref\": \"testprepareinstallment001\",\n  \"product_ref1\": \"0000133333\",\n  \"product_ref2\": \"10003718\"\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/online/orders/installment",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"online",
+								"orders",
+								"installment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create online installment order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "HELLO_WORLD_IDP",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "create_order_installment_device-01"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "652875153347005177899433863903",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"tmn_id\":\"tmn.10001819671\",\n   \"order\":{\n      \"product_code\":\"51051000100000000028\",\n      \"items\":[\n         {\n            \"merchant_id\":\"010000000028749571058\",\n            \"amount\":20000,\n            \"product_id\":\"external_product_id\",\n            \"shop_id\":\"300000000000000537342\",\n            \"terminal_id\":\"5842000520163\",\n            \"metadata\":{\n               \"billcode\":\"TI\",\n               \"Data_ref1\":\"ref1 test\",\n               \"Data_ref2\":\"ref2 test\"\n            }\n         }\n      ],\n      \"metadata\":{\n         \"channel\":\"ANDROID\",\n         \"partner_name\":\"V1\",\n         \"sof\":\"EW\",\n         \"biz_connect_payment_method\":\"pay_next\",\n         \"biz_connect_staff_uid\":\"00000\",\n         \"biz_connect_staff_first_name\":\"ผ่อนชำระ\",\n         \"biz_connect_staff_last_name\":\"ออนไลน์\",\n         \"biz_connect_merchant_name\":\"เซเรส บิส คอนเนค\",\n         \"biz_connect_shop_name\":\"ร้านค้าเริ่มต้น\",\n         \"biz_connect_installment_tenor\":\"tenor\",\n         \"biz_connect_installment_interest\":\"interest\",\n         \"biz_connect_installment_amount\":\"2000\"\n      }\n   },\n   \"order_display\":{\n      \"order_info\":[\n         {\n            \"language\":\"TH\",\n            \"remark\":\"เทส\"\n         },\n         {\n            \"language\":\"EN\",\n            \"remark\":\"Test\"\n         }\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/b2b/api/orders/installment/testprepareinstallment001",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"b2b",
+								"api",
+								"orders",
+								"installment",
+								"testprepareinstallment001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "robot-device-id-refund"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "ceres-robot-pg"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..hvYIFgk3oTy9mEYF.AFA-xhOJ32QCWyPDNMvurNba-tsi_Y6-Hewc8du3qP5hca2nRQYk2s0utNvulWHxyIrblW1XPqic-7Sywd-DTC2-tI6tJBHih8cjAhOXnv0prA_XQnhYniYnuczoOBRJs92LJ9Q1PZw-3Eeo9Iz75CxJMe91fR-ZcObauXO2HsRrrHc3741CsgepTIDVikiB2LNv8gtFqWN6xKjdFqbM_-u0Yi7mtmp3xSGRclmlrF_vcNRyjVW4Vs8FwREfYU-oMc0YAmHnClxT_Hj7-o4197QKVuAGodJAnf6kR9hNQ6ErcU7hCxR2PlEUuc6kw9O8YKd9wB7NgPfF0Kn94T6u6CkoYo--b7QusXT7Y-wOEa7lZXSEU6KeBC416jA.epw4yPaFw5i1S-c-lKyp5A"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \"2000\",\n    \"staff_first_name\": \"toto\",\n    \"staff_last_name\": \"hippo\",\n    \"staff_uid\": \"roboUid\"\n}"
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/orders/2022071510061155845888/refund",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"orders",
+								"2022071510061155845888",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "device-get-payment-order",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "ceres-robot-pg",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly90cnVlbW9uZXktZGV2LnVzLmF1dGgwLmNvbS8ifQ..-eygD2D3ZlELse5q.GXU8TFJsyAN1_D3Vq0lDOmebXu8uFCb1XuzAk1nPZ7VaPTCTLXjJzYmWunGD6gy-8pQdN47QZ5xH7AvP3jaO0ZSjle3TUbjxIje8eRndwpQzuwPal_ibRhGdq5dHwQSwUsQAW9B7qEC5gIQBMKhijAf4qe0JFMLUGuV8TF2vxZFs5K0ePLKap3yBP-TWRjD9SxtH7ZuL0yQr-3yBHDa4-wmd3g1DyExze3SrqVAcPS9BmulFILXE-hpcx7rxO7Y5BV568SgqDNEIzINpLNBsOjSTP1q2W4xoVPrdLdFOfmJcno22dxKEjzUfzHuVoEqrm4QgiEHbMZFHV28nphZ2b-0gPlXC0ADWGznzqV5AdOP-3idZIm5BHlhUkexC7svz9Vk3.qi3HIeLoimiWXFb8qHnoLw",
+								"type": "text"
+							},
+							{
+								"key": "X-Correlation-Id",
+								"value": "484659520349720867031687089514",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/orders/testprepareinstallment001",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"orders",
+								"testprepareinstallment001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get payment order v1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Biz-Connect-Organization-Id",
+								"value": "org-get-payment-order",
+								"type": "text"
+							},
+							{
+								"key": "Biz-Connect-Device-Id",
+								"value": "device-get-payment-order",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer accesstoken-robot",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "638211639390471829047366575239",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/orders/payment/2022082314492642717005 ",
+							"protocol": "https",
+							"host": [
+								"biz-connect-payment-dev",
+								"private-a-cloud1n",
+								"ascendmoney",
+								"io"
+							],
+							"path": [
+								"biz-connect-payment",
+								"api",
+								"orders",
+								"payment",
+								"2022082314492642717005 "
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "b2b get order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/b2b/api/orders/payment/2022082615473295412584?display=",
+					"protocol": "https",
+					"host": [
+						"biz-connect-payment-dev",
+						"private-a-cloud1n",
+						"ascendmoney",
+						"io"
+					],
+					"path": [
+						"biz-connect-payment",
+						"b2b",
+						"api",
+						"orders",
+						"payment",
+						"2022082615473295412584"
+					],
+					"query": [
+						{
+							"key": "display",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b2b get payment order v1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Biz-Connect-Merchant-Id",
+						"value": "010000000025551779368",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://biz-connect-payment-qa.private-a-cloud1n.ascendmoney.io/biz-connect-payment/b2b/api/v1/orders/payment/2022082615473295412584",
+					"protocol": "https",
+					"host": [
+						"biz-connect-payment-qa",
+						"private-a-cloud1n",
+						"ascendmoney",
+						"io"
+					],
+					"path": [
+						"biz-connect-payment",
+						"b2b",
+						"api",
+						"v1",
+						"orders",
+						"payment",
+						"2022082615473295412584"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get relations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en_US"
+					}
+				],
+				"url": {
+					"raw": "http://apis-pri.tmn-dev.com/acm-aplus-merchant-api/api/v1/merchants/010000000033389239269/relations",
+					"protocol": "http",
+					"host": [
+						"apis-pri",
+						"tmn-dev",
+						"com"
+					],
+					"path": [
+						"acm-aplus-merchant-api",
+						"api",
+						"v1",
+						"merchants",
+						"010000000033389239269",
+						"relations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "webhooks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en_US",
+						"disabled": true
+					},
+					{
+						"key": "Timestamp",
+						"value": "1670562731",
+						"type": "text"
+					},
+					{
+						"key": "Content-Signature",
+						"value": "digest-alg=RSA-SHA; key-id=KEY:RSA:rsf.org; data=JDZbJhVZJmHsWupM2bGj7PFrndVd7G8FTnVe2cigBMZuCzCpNdhXjbHVysSl7gGd+/dAR0/PX11O1S4N2W4KQUZY8ku0dmaWyos4NxhqOhRVDO8kCTkVA6n+X8Oy/kpyu/yWPboPVnyWkNoqqZpxUkon6B1jRend0hFJdqB2olZzg8RnALBTl1wEx2B9jVT/gajsrsqCd7hESyFsxEHyk/PXc1I0Vjtcx6vLMCry+cCctFekCYDt4p0+aNUz/G5ysszErYy/TXS0p2Lzu/uw9KhQWx8MngT3MGewpZvGxvWNZghb01T//HJtD3sBfIL4NjhXjIejqY/OJvM5Ru1a3Q==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"notify_id\":\"mnc-b88c21f4f2fc40f0af059124c3b11206\",\n   \"timestamp\":\"2018-09-26T17:27:56.362+07:00\",\n   \"type\":\"CHARGE\",\n   \"payload\":{\n      \"order_id\":\"O180999PAID\",\n      \"payment_id\":\"webhook-payment-id-77\",\n      \"isv_payment_ref\":\"robot-reference-id-webhook\",\n      \"tran_date\":\"2018-09-26T17:27:56.362+07:00\",\n      \"amount\":\"20\",\n      \"merchant_id\":\"merchant_id\"\n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://biz-connect-payment-dev.private-a-cloud1n.ascendmoney.io/biz-connect-payment/api/merchant-notification/webhooks",
+					"protocol": "https",
+					"host": [
+						"biz-connect-payment-dev",
+						"private-a-cloud1n",
+						"ascendmoney",
+						"io"
+					],
+					"path": [
+						"biz-connect-payment",
+						"api",
+						"merchant-notification",
+						"webhooks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
